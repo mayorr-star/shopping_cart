@@ -1,0 +1,69 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px;
+  background: #6441A5; 
+  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);
+  background: linear-gradient(to right, #2a0845, #6441A5);}
+
+.listitem a:focus {
+  color: #646cff;
+}
+
+.listitem {
+  list-style-type: none;
+}
+
+.listitem a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  animation-name: logo-spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cm {
+  font-family: "glaze", "Times New Roman", Times, serif;
+}
+
+.logoWrapper{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.5rem;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bm {
+  width: 100%;
+  height: 2px;
+  background-color: #646cff;
+  opacity: 0;
+  transition: opacity 500ms ease transform 500ms ease;
+}
+
+.listitem:hover .bm {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.links{
+  display: flex;
+  gap: 100px;
+}
