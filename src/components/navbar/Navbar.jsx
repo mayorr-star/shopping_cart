@@ -1,28 +1,29 @@
 import { Link } from "react-router-dom";
+import styles from "./Navbar.module.css";
 
 const NavBar = () => {
   return (
-    <nav>
-      <div className="logo">
+    <nav className={styles.nav}>
+      <div className={styles.logoWrapper}>
         <img
           src="src\assets\images\logo.jpg"
           alt="market house, logo"
           className="logo"
         />
-        <p className="cm">Market House</p>
+        <p className={styles.cm}>Market House</p>
       </div>
-      <ul>
-        <li>
+      <ul className={styles.links}>
+        <li className={styles.listitem}>
           <Link to="/">Home</Link>
-          <div className="bm"></div>
+          <div className={styles.bm}></div>
         </li>
-        <li>
+        <li className={styles.listitem}>
           <Link to="catalog">Catalog</Link>
-          <div className="bm"></div>
+          <div className={styles.bm}></div>
         </li>
-        <li>
+        <li className={styles.listitem}>
           <Link to="cart">Cart</Link>
-          <div className="bm"></div>
+          <div className={styles.bm}></div>
         </li>
       </ul>
     </nav>
