@@ -8,16 +8,16 @@ class Button extends Component {
 
     render() {
         return (
-            <button type={this.props.type} className={this.props.cls}>{this.props.children}</button>
+            <button type={this.props.type} className={this.props.cls} onClick={this.props.onClick}>{this.props.children}</button>
         )
     }
 }
 
 Button.propTypes = {
     type: PropTypes.string,
-    text: PropTypes.string.isRequired,
     cls: PropTypes.string,
     children: PropTypes.node.isRequired,
+    onClick: PropTypes.func
 }
 
 Button.defaultProps = {
