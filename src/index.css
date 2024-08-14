@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+@font-face {
+  font-family: "oswald";
+  src: url(./assets/fonts/Oswald-Regular.ttf);
+}
+
+@font-face {
+  font-family: "glaze";
+  src: url(./assets/fonts/KalniaGlaze-ExtraLight.ttf);
+}
+
+:root {
+  font-size: 16px;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "oswald", 'Times New Roman', Times, serif;
+}
