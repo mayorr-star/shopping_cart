@@ -1,9 +1,18 @@
-import App from "../components/navbar/App/App"
+import App from "../components/App/App"
+import Home from "../components/Home/Home"
+import Catalog from "../components/catalog/Catalog"
+import Cart from "../components/Cart/Cart"
 
 const routes = [
     {
         path: "/",
-        element: <App/>
+        element: <App/>,
+        children: [
+            {index: true, element: <Home/>},
+            {path: "/", element: <Home/>},
+            {path: "catalog", element: <Catalog/>},
+            {path: "cart", element: <Cart/>}
+        ]
     }
 ]
 
