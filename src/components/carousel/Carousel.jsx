@@ -45,7 +45,7 @@ const Carousel = () => {
   }
 
 
-  if (error) return <p>{`An error occured: ${error} resource`}</p>
+  if (error) return <p className={styles.error}>{`An error occured: ${error} resource`}</p>
   if (loading) return <p>Loading...</p>
   return (
     <section aria-label="New Additions" className={styles.carousel}>
