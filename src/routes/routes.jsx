@@ -1,4 +1,4 @@
-import App from "../components/App/App"
+import App from "../App"
 import Home from "../components/Home/Home"
 import Catalog from "../components/catalog/Catalog"
 import Cart from "../components/Cart/Cart"
