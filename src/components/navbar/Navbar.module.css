@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-around;
   padding: 15px;
-  background: #6441A5; 
-  background: -webkit-linear-gradient(to right, #2a0845, #6441A5);
-  background: linear-gradient(to right, #2a0845, #6441A5);}
+  background: #6441a5;
+  background: -webkit-linear-gradient(to right, #2a0845, #6441a5);
+  background: linear-gradient(to right, #2a0845, #6441a5);
+}
 
 .listitem a:focus {
   color: #646cff;
@@ -34,7 +35,7 @@
   font-family: "glaze", "Times New Roman", Times, serif;
 }
 
-.logoWrapper{
+.logoWrapper {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -63,7 +64,41 @@
   transform: scale(1.2);
 }
 
-.links{
+.links {
   display: flex;
   gap: 100px;
+}
+
+.itemsNum {
+  color: white;
+  position: absolute;
+  display: inline-block;
+  top: -50%;
+  right: 20%;
+}
+
+@keyframes tilt-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.listitem.relative {
+  position: relative;
+}
+
+.listitem.relative:hover {
+  animation: tilt-shake 500ms ease infinite;
 }
