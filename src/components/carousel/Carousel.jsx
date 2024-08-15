@@ -18,7 +18,6 @@ const Carousel = () => {
         return response.json();
       })
       .then((response) => {
-        console.log(response);
         setData(response);
       })
       .catch((error) => setError(error))
