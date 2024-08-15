@@ -53,3 +53,10 @@
     opacity: 1;
   }
 }
+ 
+.error{
+  background-color: white;
+  color: #000000;
+  padding: 20px;
+  border-radius: 6px;
+}
