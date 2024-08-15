@@ -3,7 +3,7 @@ import { ShoppingCart } from "lucide-react";
 import styles from "./Navbar.module.css";
 import PropTypes from "prop-types"
 
-const NavBar = ({itemsNum = 0}) => {
+const NavBar = ({itemsNum}) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logoWrapper}>
