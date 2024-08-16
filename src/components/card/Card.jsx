@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PlusSquare, MinusSquare } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
-import Button from "../button/Button";
+import Button, { CardButton} from "../button/Button";
 
 const Card = () => {
   const [value, setValue] = useState(0);
@@ -38,9 +38,9 @@ const Card = () => {
         <p> 45 dollars</p>
       </div>
       <div>
-        <Button onClick={handelDecBtnClick}>
-          <MinusSquare />
-        </Button>
+        <CardButton onClick={handelDecBtnClick} ariaLabel="Decrease number of items">
+          <MinusSquare/>
+        </CardButton>
         <input
           type="number"
           name="itemNum"
@@ -48,9 +48,9 @@ const Card = () => {
           value={value}
           onChange={handleInputChange}
         />
-        <Button onClick={handelIncBtnClick}>
-          <PlusSquare />
-        </Button>
+       <CardButton onClick={handelIncBtnClick} ariaLabel="Increase number of items">
+          <PlusSquare/>
+       </CardButton>
       </div>
       <Button onClick={handleAddToCartClick}>Add to Cart</Button>
     </div>
