@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
 import styles from "./Navbar.module.css";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
-const NavBar = ({itemsNum}) => {
+const NavBar = ({ items }) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logoWrapper}>
@@ -25,9 +25,9 @@ const NavBar = ({itemsNum}) => {
         </li>
         <li className={`${styles.listitem} ${styles.relative}`}>
           <Link to="cart">
-            <ShoppingCart/>
+            <ShoppingCart />
           </Link>
-          <span className={styles.itemsNum}>{itemsNum}</span>
+          <span className={styles.items}>{items}</span>
           <div className={styles.bm}></div>
         </li>
       </ul>
@@ -36,7 +36,7 @@ const NavBar = ({itemsNum}) => {
 };
 
 NavBar.propTypes = {
-  itemsNum: PropTypes.number
-}
+  items: PropTypes.number,
+};
 
 export default NavBar;
