@@ -1,60 +1,98 @@
 import { useState } from "react";
 import { PlusSquare, MinusSquare } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
-import Button, { CardButton} from "../button/Button";
+import Button, { CardButton } from "../button/Button";
+import PropTypes from "prop-types";
 
-const Card = () => {
-  const [value, setValue] = useState(0);
-  const [itemsNum, setItemsNum] = useOutletContext();
+const Card = ({ product }) => {
+  const [value, setValue] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const { selectedIds, setSelectedIds, cartItems, setCartItems } =
+    useOutletContext();
 
   const handleInputChange = (e) => {
-    const inputValue = Number(e.target.value)
-    setValue((inputValue));
+    setValue(e.target.value);
+    setQuantity(Number(e.target.value));
   };
 
-  const handelIncBtnClick = () => {
+  const handleIncButtonClick = () => {
     setValue((value) => value + 1);
+    setQuantity(quantity => quantity + 1);
   };
 
-  const handelDecBtnClick = () => {
-    if (value <= 0) {
-      setValue(0);
+  const handleDecButtonClick = () => {
+    setValue((value) => (value > 1 ? value - 1 : 1));
+    setQuantity(quantity => quantity > 1 ? quantity - 1 : 1);
+  };
+
+  const handleAddToCartBtnClick = () => {
+    addToCart(product, quantity)
+    setValue(1);
+  };
+
+  const addToCart = (product, quantity) => {
+    if (!selectedIds.includes(product.id))
+      setSelectedIds([...selectedIds, product.id]);
+    const existingProduct = cartItems.find(
+      (cartItem) => cartItem.id === product.id
+    );
+    if (existingProduct) {
+      setCartItems(
+        cartItems.map((cartItem) => {
+          if (cartItem.id === product.id) {
+            return { ...cartItem, quantity: quantity };
+          } else {
+            return cartItem;
+          }
+        })
+      );
     } else {
-      setValue((value) => value - 1);
+      setCartItems([...cartItems, { ...product, quantity }]);
     }
   };
 
-  const handleAddToCartClick = () => {
-    setItemsNum(itemsNum => itemsNum + value);
-    setValue(0)
-  }
   return (
-    <div>
-      <div>
+    <div className="product">
+      <div className="info">
         <div>
-          <img src="src/assets/images/logo.jpg" />
+          <img src="src/assets/images/logo.jpg" alt="product" />
+          <div>
+            <p className="product_name">{product.title}</p>
+            <p className="product_price">{product.price}</p>
+          </div>
         </div>
-        <p>Bags</p>
-        <p> 45 dollars</p>
       </div>
-      <div>
-        <CardButton onClick={handelDecBtnClick} ariaLabel="Decrease number of items">
-          <MinusSquare/>
+      <div className="controls">
+        <CardButton
+          onClick={handleDecButtonClick}
+          ariaLabel="Decrease number of items"
+        >
+          <MinusSquare />
         </CardButton>
         <input
           type="number"
-          name="itemNum"
-          id="itemNum"
+          name="quantity"
+          id="quantity"
           value={value}
           onChange={handleInputChange}
+          min={1}
         />
-       <CardButton onClick={handelIncBtnClick} ariaLabel="Increase number of items">
-          <PlusSquare/>
-       </CardButton>
+        <CardButton
+          onClick={handleIncButtonClick}
+          ariaLabel="Increase number of items"
+        >
+          <PlusSquare />
+        </CardButton>
       </div>
-      <Button onClick={handleAddToCartClick}>Add to Cart</Button>
+      <Button cls="AddToCart" onClick={handleAddToCartBtnClick}>
+        Add To Cart
+      </Button>
     </div>
   );
+};
+
+Card.propTypes = {
+  product: PropTypes.object,
 };
 
 export default Card;
