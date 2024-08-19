@@ -7,8 +7,8 @@ const Catalog = () => {
   const [filter, setFilter] = useState("all products");
 
   const handleChange = (e) => {
-    setFilter(e.target.value)
-  }
+    setFilter(e.target.value);
+  };
 
   return (
     <>
@@ -73,12 +73,21 @@ const Catalog = () => {
         </div>
       </header>
       <main>
-        {
-        data
-          .filter((product) => product.category === filter)
-          .map((product) => (
-            <Card key={product.id} product={product} isInCart={false} />
-          ))}
+        <ul>
+          {filter === "all products"
+            ? data.map((product) => (
+                <li key={product.id}>
+                  <Card product={product} />
+                </li>
+              ))
+            : data
+                .filter((product) => product.category === filter)
+                .map((product) => (
+                  <li key={product.id}>
+                    <Card product={product} />
+                  </li>
+                ))}
+        </ul>
       </main>
     </>
   );
