@@ -1,10 +1,20 @@
 import { useOutletContext } from "react-router-dom";
 import { MinusSquare, PlusSquare, Trash2 } from "lucide-react";
-import { CardButton } from "../button/Button";
+import Button, { CardButton } from "../button/Button";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 const Cart = () => {
-  const { selectedIds, cartItems } = useOutletContext();
+  const { selectedIds, cartItems, itemsInCart } = useOutletContext();
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
+
+  const handelCheckOut = () => {
+    setIsCheckedOut(true);
+  };
+
+  const totalCost = cartItems.reduce((acc, curr) => {
+    return acc + curr.quantity * curr.price;
+  }, 0);
   return (
     <>
       {selectedIds.length === 0 ? (
@@ -17,9 +27,28 @@ const Cart = () => {
             <h1>Items In Cart</h1>
           </header>
           <main>
-            {cartItems.map((cartItem) => (
-              <ProductCard key={cartItem.id} product={cartItem} />
-            ))}
+            <div className="cart_items">
+              <ul>
+                {cartItems.map((cartItem) => (
+                  <li key={cartItem.id}>
+                    <ProductCard product={cartItem} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p>Total Cost: {totalCost} GHC</p>
+            <Button cls="checkout" onClick={handelCheckOut}>
+              Checkout
+            </Button>
+            {isCheckedOut && (
+              <div className="purchase">
+                <div>
+                  <p>
+                    You purchased {itemsInCart} items worth {totalCost} GHC
+                  </p>
+                </div>
+              </div>
+            )}
           </main>
         </>
       )}
