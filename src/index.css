@@ -23,3 +23,26 @@
   -moz-osx-font-smoothing: grayscale;
   font-family: "oswald", 'Times New Roman', Times, serif;
 }
+
+.spinner{
+  height: 120px;
+  width: 120px;
+  border: 6px solid;
+  border-color	: black transparent black transparent;
+  border-radius: 50%;
+  animation: spin 1.3s linear infinite;
+}
+
+@keyframes spin {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.error_text, .spinner{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+}
