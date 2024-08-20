@@ -77,7 +77,10 @@ const Carousel = () => {
       )}
       {error && (
         <div className={styles.error}>
+          <div>
           <p className={styles.textRed700}>An error has occured. Failed to load images</p>
+
+          </div>
         </div>
       )}
       <ol className={styles.indicators}>
