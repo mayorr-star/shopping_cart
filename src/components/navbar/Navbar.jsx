@@ -9,10 +9,10 @@ const NavBar = ({ items }) => {
       <div className={styles.logoWrapper}>
         <img
           src="src\assets\images\logo.jpg"
-          alt="market house, logo"
+          alt="Nana's Shop, logo"
           className="logo"
         />
-        <p className={styles.cm}>Market House</p>
+        <p className={styles.cm}>Nana&apos;s Shop</p>
       </div>
       <ul className={styles.links}>
         <li className={styles.listitem}>
@@ -24,7 +24,7 @@ const NavBar = ({ items }) => {
           <div className={styles.bm}></div>
         </li>
         <li className={`${styles.listitem} ${styles.relative}`}>
-          <Link to="cart">
+          <Link to="cart" aria-label="shoppig cart">
             <ShoppingCart />
           </Link>
           <span className={styles.items}>{items}</span>
