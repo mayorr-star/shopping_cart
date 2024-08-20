@@ -1,0 +1,96 @@
+.listitem a:focus {
+  color: #646cff;
+}
+
+.listitem {
+  list-style-type: none;
+}
+
+.listitem a {
+  text-decoration: none;
+  color: white;
+}
+
+footer {
+  padding: 32px 20px;
+  background: #6441a5;
+  background: -webkit-linear-gradient(to right, #2a0845, #6441a5);
+  background: linear-gradient(to right, #2a0845, #6441a5);
+  color: white;
+}
+
+.logoWrapper img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+  animation-name: logo-spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cm {
+  font-family: "glaze", "Times New Roman", Times, serif;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.socialLinks svg,
+.socialLinks img {
+  width: 20px;
+}
+
+.socialLinks svg.en{
+    width: 50px;
+}
+
+.socialLinks,
+.pageLinks {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.socialLinks li,
+.pageLinks li {
+  list-style-type: none;
+}
+
+.pageLinks a:focus {
+  color: #646cff;
+}
+
+.pageLinks a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.info {
+  margin: 25px 0;
+}
+
+.pageLinks{
+    margin-top: 25px;
+}
+
+footer hr{
+    margin: 20px 0;
+}
+
+.copyRight{
+    margin-bottom: 15px;
+}

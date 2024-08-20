@@ -1,0 +1,37 @@
+.homepage{
+    background: #6441a5;
+    padding: 200px 100px 100px 100px;
+    background-image: url(../../assets/images/shopping1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro{
+    font-size: 2.5rem;
+    margin-bottom: 100px;
+}
+
+.shopNowBtn{
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    gap: 7px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    color: #3B3B3B;
+    border-radius: 15px;
+    border: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    border: 2px solid #1A1A1A;
+}
+
+.shopNowBtn:hover{
+    color: #fff;
+    background-color: #1A1A1A;
+}
+
+.remdec{
+    text-decoration: none;
+}
