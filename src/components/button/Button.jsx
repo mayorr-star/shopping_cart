@@ -40,6 +40,7 @@ class CardButton extends Component {
         type="button"
         onClick={this.props.onClick}
         aria-label={this.props.ariaLabel}
+        className={this.props.cls}
       >
         {this.props.children}
       </button>
@@ -52,6 +53,7 @@ CardButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   ariaLabel: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
+  cls: PropTypes.string
 };
 
 export default Button;
