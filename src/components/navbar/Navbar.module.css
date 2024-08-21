@@ -26,10 +26,11 @@
   width: 50px;
   height: auto;
   border-radius: 50%;
-  animation-name: logo-spin;
-  animation-duration: 10s;
+  animation-name: pulsate;
+  animation-duration: 2s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
 }
 
 .cm {
@@ -43,12 +44,14 @@
   font-size: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes pulsate {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: scale(1.1);
   }
 }
 
