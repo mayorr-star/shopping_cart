@@ -1,0 +1,57 @@
+.product {
+    box-shadow: 0 0 3px 1px #bbbbbb;
+    border-radius: 7px;
+    position: relative;
+    padding-bottom: 7px;
+  }
+  
+  .flex {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 7px;
+  }
+  
+  .flex img {
+    max-width: 100px;
+    border-radius: 4px;
+  }
+  
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: 6px;
+  }
+  
+  .controls input {
+    max-width: 35px;
+    font-weight: 600;
+    border-radius: 4px;
+    padding: 2px;
+    text-align: center;
+    outline: 0;
+    border: 2px solid #717171;
+  }
+  
+  .controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .controls button:hover,
+  .remBtn:hover {
+    transform: scale(1.1);
+  }
+  
+  .remBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+  }
