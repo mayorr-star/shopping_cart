@@ -4,6 +4,18 @@
     background-image: url(../../assets/images/shopping1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    animation-name: fade;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .intro{

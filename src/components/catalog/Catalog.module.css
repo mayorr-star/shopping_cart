@@ -1,0 +1,43 @@
+.header{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 25px 0;
+}
+
+.header h1{
+    margin-bottom: 15px;
+}
+
+.filter{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.filter label{
+    margin-right: 5px;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 17px;
+    padding: 20px;
+    animation-name: fade;
+    animation-timing-function: ease-in;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.products li{
+    list-style-type: none;
+}
+
