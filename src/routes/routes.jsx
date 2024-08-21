@@ -4,7 +4,7 @@ import Catalog from "../components/catalog/Catalog"
 import ErrorPage from "../components/error/ErrorPage"
 import About from "../components/about/About"
 import ContactPage from "../components/contact/ContactPage"
-import Cart from "../components/cart/Cart"
+import Cart from "../components/CartPage/Cart"
 
 const routes = [
   {
