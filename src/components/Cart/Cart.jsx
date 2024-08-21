@@ -1,16 +1,11 @@
 import { useOutletContext } from "react-router-dom";
 import { MinusSquare, PlusSquare, Trash2 } from "lucide-react";
 import Button, { CardButton } from "../button/Button";
-import { useState } from "react";
 import PropTypes from "prop-types";
+import styles from "./Cart.module.css";
 
 const Cart = () => {
-  const { selectedIds, cartItems, itemsInCart } = useOutletContext();
-  const [isCheckedOut, setIsCheckedOut] = useState(false);
-
-  const handelCheckOut = () => {
-    setIsCheckedOut(true);
-  };
+  const { selectedIds, cartItems,  } = useOutletContext();
 
   const totalCost = cartItems.reduce((acc, curr) => {
     return acc + curr.quantity * curr.price;
@@ -18,17 +13,17 @@ const Cart = () => {
   return (
     <>
       {selectedIds.length === 0 ? (
-        <div>
+        <div className={styles.empty}>
           <p>No Items added to cart yet</p>
         </div>
       ) : (
         <>
-          <header>
+          <header className={styles.center}>
             <h1>Items In Cart</h1>
           </header>
-          <main>
-            <div className="cart_items">
-              <ul>
+          <main className={styles.content}>
+            <div className={styles.cart_items}>
+              <ul className={styles.listItems}>
                 {cartItems.map((cartItem) => (
                   <li key={cartItem.id}>
                     <ProductCard product={cartItem} />
@@ -36,19 +31,12 @@ const Cart = () => {
                 ))}
               </ul>
             </div>
-            <p>Total Cost: {totalCost} GHC</p>
-            <Button cls="checkout" onClick={handelCheckOut}>
-              Checkout
-            </Button>
-            {isCheckedOut && (
-              <div className="purchase">
-                <div>
-                  <p>
-                    You purchased {itemsInCart} items worth {totalCost} GHC
-                  </p>
-                </div>
-              </div>
-            )}
+              <p className={styles.totalCost}>Total Cost: {totalCost} GHC</p>
+            <div className={styles.checkoutWrapper}>
+              <Button cls={styles.checkout}>
+                Checkout
+              </Button>
+            </div>
           </main>
         </>
       )}
@@ -105,21 +93,21 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="product">
-      <div className="info">
-        <div>
-          <img src="src/assets/images/logo.jpg" alt="product" />
+    <div className={styles.product}>
+      <div className={styles.info}>
+        <div className={styles.flex}>
+          <img src={product.image} alt={product.title} />
           <div>
             <p className="product_name">{product.title}</p>
-            <p className="product_price">{`Price: ${product.price}`}</p>
+            <p className="product_price">{`Price: ${product.price} GHC`}</p>
             <p className="quantity">{`Quantity: ${product.quantity}`}</p>
-            <p className="total_cost">{`${product.price} x ${
+            <p className="total_cost">{`Cost: ${product.price} GHC x ${
               product.quantity
             } = ${Number(product.price) * product.quantity}`}</p>
           </div>
         </div>
       </div>
-      <div className="controls">
+      <div className={styles.controls}>
         <CardButton
           onClick={handleDecButtonClick}
           ariaLabel="Decrease number of items"
@@ -141,7 +129,11 @@ const ProductCard = ({ product }) => {
           <PlusSquare />
         </CardButton>
       </div>
-      <CardButton ariaLabel="Remove from cart" onClick={handleRemove}>
+      <CardButton
+        ariaLabel="Remove from cart"
+        onClick={handleRemove}
+        cls={styles.remBtn}
+      >
         <Trash2 />
       </CardButton>
     </div>

@@ -3,6 +3,7 @@ import { PlusSquare, MinusSquare } from "lucide-react";
 import { useOutletContext } from "react-router-dom";
 import Button, { CardButton } from "../button/Button";
 import PropTypes from "prop-types";
+import styles from "./Card.module.css"
 
 const Card = ({ product }) => {
   const [value, setValue] = useState(1);
@@ -52,17 +53,17 @@ const Card = ({ product }) => {
   };
 
   return (
-    <div className="product">
-      <div className="info">
-        <div>
-          <img src="src/assets/images/logo.jpg" alt="product" />
+    <div className={styles.product}>
+      <div className={styles.info}>
+        <div className={styles.flex}>
+          <img src={product.image} alt={product.title} />
           <div>
             <p className="product_name">{product.title}</p>
-            <p className="product_price">{product.price}</p>
+            <p className="product_price">{`${product.price} GHC`}</p>
           </div>
         </div>
       </div>
-      <div className="controls">
+      <div className={styles.controls}>
         <CardButton
           onClick={handleDecButtonClick}
           ariaLabel="Decrease number of items"
@@ -84,7 +85,7 @@ const Card = ({ product }) => {
           <PlusSquare />
         </CardButton>
       </div>
-      <Button cls="AddToCart" onClick={handleAddToCartBtnClick}>
+      <Button cls={styles.addToCart} onClick={handleAddToCartBtnClick}>
         Add To Cart
       </Button>
     </div>
