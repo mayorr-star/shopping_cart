@@ -8,7 +8,7 @@ const NavBar = ({ items }) => {
     <nav className={styles.nav}>
       <div className={styles.logoWrapper}>
         <img
-          src="src/assets/images/ns.jpg"
+          src="./NS.jpg"
           alt="Nana's Shop, logo"
           className="logo"
         />
