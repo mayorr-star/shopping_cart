@@ -1,8 +1,29 @@
-# React + Vite
+# Shopping Cart
+A mock shopping cart built with vite and react
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
+
+![](./Capture.JPG)
+
+### Links
+
+- Live Site URL :[live site URL](https://mayorr-star.github.io/Weather_App/)
+
+## My Process
+
+## Built With
+- React
+- ESlint
+- Vite
+- React router dom
+
+## LICENSE
+This project is MIT licensed
