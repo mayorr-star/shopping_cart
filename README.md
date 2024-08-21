@@ -15,7 +15,7 @@ A mock shopping cart built with vite and react
 
 ### Links
 
-- Live Site URL :[live site URL](https://mayorr-star.github.io/Weather_App/)
+- Live Site URL :[live site URL]https://shopping-cart-chi-lilac.vercel.app/
 
 ## My Process
 
