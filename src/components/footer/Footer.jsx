@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer>
       <div className={styles.logoWrapper}>
-        <img src="src/assets/images/ns.jpg" alt="Company, logo" />
+        <img src="public/assets/images/ns.jpg"alt="Company, logo" />
         <p className={styles.cm}>Nana&apos;s Shop</p>
       </div>
       <p className={styles.info}>High quality products!</p>
