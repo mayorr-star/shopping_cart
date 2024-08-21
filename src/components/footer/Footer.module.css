@@ -23,10 +23,6 @@ footer {
   width: 50px;
   height: auto;
   border-radius: 50%;
-  animation-name: logo-spin;
-  animation-duration: 10s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .cm {
@@ -39,15 +35,6 @@ footer {
   gap: 5px;
   font-size: 1.5rem;
   margin-bottom: 20px;
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .socialLinks svg,
