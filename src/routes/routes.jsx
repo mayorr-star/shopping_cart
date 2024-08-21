@@ -1,8 +1,8 @@
 import App from "../App"
 import Home from "../components/home/Home"
 import Catalog from "../components/catalog/Catalog"
-import Cart from "../components/cart/Cart"
 import ErrorPage from "../components/error/ErrorPage"
+import Cart from "../components/cart/Cart";
 import About from "../components/about/About"
 import ContactPage from "../components/contact/ContactPage"
 
