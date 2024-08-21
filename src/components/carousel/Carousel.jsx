@@ -21,7 +21,6 @@ const Carousel = () => {
       .then((reponse) => {
         if (!ignore) {
           setImageurls(reponse);
-          console.log(reponse);
           setError(null);
         }
       })

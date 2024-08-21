@@ -23,7 +23,6 @@ function App() {
         if (!ignore) {
           setData(reponse);
           setError(null);
-          console.log(reponse);
         }
       })
       .catch((error) => {
