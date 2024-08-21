@@ -1,0 +1,124 @@
+.center {
+  text-align: center;
+  text-transform: capitalize;
+  margin: 25px 0;
+}
+
+.product {
+  box-shadow: 0 0 3px 1px #bbbbbb;
+  border-radius: 7px;
+  position: relative;
+  padding-bottom: 7px;
+}
+
+.flex {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+
+.flex img {
+  max-width: 100px;
+  border-radius: 4px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 6px;
+}
+
+.controls input {
+  max-width: 35px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 2px;
+  text-align: center;
+  outline: 0;
+  border: 2px solid #717171;
+}
+
+.controls button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.controls button:hover,
+.remBtn:hover {
+  transform: scale(1.1);
+}
+
+.remBtn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+}
+
+ul.listItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 17px;
+  padding: 20px;
+  animation-name: fade;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.listItems li {
+  list-style-type: none;
+}
+
+.checkout {
+  padding: 7px 32px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 15px 0 35px 0;
+  color: #000000;
+  background: transparent;
+  border-radius: 12px;
+  outline: none;
+  border: 2px solid black;
+  transition: background-color 0.5s ease;
+}
+
+.checkout:hover{
+    background-color: #000000;
+    color: white;
+    text-align: center;
+}
+
+.totalCost {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.checkoutWrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.empty{
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
