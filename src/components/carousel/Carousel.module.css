@@ -9,7 +9,6 @@
 
 .list{
     display: flex;
-    overflow: hidden;
 }
 
 .slide.active{
@@ -109,4 +108,19 @@
 
 .loading{
     color: #717171;
+}
+
+@media (max-width: 600px) {
+    .imageCarousel{
+        margin-top: 50px;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .slide{
+        min-width: 300px;
+        background-size: cover;
+    }
+
 }

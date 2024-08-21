@@ -41,3 +41,8 @@
     list-style-type: none;
 }
 
+@media (max-width: 500px) {
+    .filter{
+        align-items: center;
+    }
+}
