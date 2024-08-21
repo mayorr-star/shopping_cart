@@ -105,3 +105,16 @@
 .listitem.relative:hover {
   animation: tilt-shake 500ms ease infinite;
 }
+
+
+@media (max-width:600px) {
+  .links{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .logoWrapper {
+    gap: 15px;
+    font-size: 1.5rem;
+  }
+}
